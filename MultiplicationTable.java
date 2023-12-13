@@ -3,14 +3,16 @@ public class MultiplicationTable {
 
 
     public static void run(){
+        
         int number = takeNumber();
         printTable(number);
-        printChoice();  
+        printChoice();
     }
 
 
     public static int takeNumber(){ 
-        
+        System.out.println();
+        System.out.println();
         System.out.println();
         System.out.print("Which number would you like the multiplication Table for? : ");
         return HelperMethods.getNumber();
@@ -32,16 +34,19 @@ public class MultiplicationTable {
 
 
     public static void printChoice(){
-
-        System.out.print("Would you like to see another multiplication table? Enter a new number or enter something else to stop the program. :");
-        String choice = HelperMethods.getInput();
-        
-        try { 
-            int intValue = Integer.parseInt(choice); 
-            System.out.println("Ausgabe eines Intergers " + intValue); 
-        } catch (NumberFormatException e) { 
-            System.out.println(" Ausgabe eines Strings"); 
-        } 
-
+        while(true){
+            System.out.println();
+            System.out.println();
+            System.out.print("Would you like to see another multiplication table? Enter a new number or enter something else to stop the program : ");
+            String choice = HelperMethods.getInput();
+            
+            try { 
+                int intValue = Integer.parseInt(choice); 
+                printTable(intValue);
+            } 
+            catch (NumberFormatException e) { 
+                break;
+            } 
+        }
     }
 }

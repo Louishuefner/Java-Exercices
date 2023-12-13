@@ -13,7 +13,6 @@ public class HelperMethods{
         number = scNumber.nextInt();
         
         return number;
-
     }
 
     public static String getInput(){

@@ -6,9 +6,11 @@ public class AllJavaExercices {
         boolean shouldLoop = true;
 
         while (shouldLoop){
+            System.out.println();
+            System.out.println();
             Scanner seChoice = new Scanner(System.in);
             System.out.println();
-            System.out.print("Do You want To crate, a MultiplicationsTable (enter 1) , a PrimeNumberChecker (enter 2),           or type in 'q' to quit:");
+            System.out.print("Do You want To crate:\n\n--> MultiplicationsTable (enter 1) \n\n--> PrimeNumberChecker (enter 2) \n           \n--> Or type in 'q' to Quit \n \nPleas Enter here: ");
             boolean isNumber = seChoice.hasNextInt();
             
             if(!isNumber){
