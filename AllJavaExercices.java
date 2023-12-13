@@ -8,7 +8,7 @@ public class AllJavaExercices {
         while (shouldLoop){
             Scanner seChoice = new Scanner(System.in);
             System.out.println();
-            System.out.print("Do You want To crate a MultiplicationsTable (enter 1) :");
+            System.out.print("Do You want To crate, a MultiplicationsTable (enter 1) , a PrimeNumberChecker (enter 2),           or type in 'q' to quit:");
             boolean isNumber = seChoice.hasNextInt();
             
             if(!isNumber){
@@ -22,11 +22,13 @@ public class AllJavaExercices {
                 int choice = seChoice.nextInt();
                 switch (choice) {
                     case 1:
-                    MultiplicationTable.run();
-                    break;
-
-                default:
-                    break;
+                        MultiplicationTable.run();
+                        break;
+                    case 2:
+                        PrimeNumberChecker.run();
+                        break;
+                    default:
+                        break;
                 }
             }
         }   

@@ -3,42 +3,36 @@ public class PrimeNumberChecker {
 
 
     public static void run(){
-        boolean mainChoice = true;
-
-            while (mainChoice) {
-                int number = getNumber();
-                printPrime(number);
-            }
-     }
-
-
-    public static int getNumber(){ 
-
-        Scanner scNumber = new Scanner(System.in);  
-        int number;
-        
-        
-        do{
-            System.out.println();
-
-            System.out.print("Which number would you like the multiplication Table for? : ");
-            
-            while(!scNumber.hasNextInt()){
-                System.out.println("That is not a Valid Number");
-                scNumber.next();
-            } 
-
-            number = scNumber.nextInt();
-        }
-
-        while (number <= 1);
-        
-        return number;
+        int number = takeNumber();
+        printPrime(number);  
     }
+
+
+    public static int takeNumber(){ 
+        
+        System.out.println();
+        System.out.print("Which number do you want to check? : ");
+        return HelperMethods.getNumber();
+    }
+
 
 
     public static void printPrime(int number){
 
-        if(number/)
+        boolean checker = false;
+        for (int i = 2; i <= number / 2; ++i) {
+            if ( number % i == 0) {
+                checker = true;
+                break;
+            }
+        }
+        if (!checker){
+            System.out.println();
+            System.out.println("--> " + number + " is a prime number.");
+        }
+        else {
+            System.out.println();
+            System.out.println("--> " + number + " is not a prime number.");
+        }
     }
 }

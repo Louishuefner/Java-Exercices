@@ -16,4 +16,10 @@ public class HelperMethods{
 
     }
 
+    public static String getInput(){
+
+        Scanner seChoice = new Scanner(System.in);
+            
+        return seChoice.next();
+    }
 }
