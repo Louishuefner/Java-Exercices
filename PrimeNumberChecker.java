@@ -3,6 +3,7 @@ public class PrimeNumberChecker {
 
 
     public static void run(){
+
         int number = takeNumber();
         printPrime(number);
         printChoice(); 
@@ -35,13 +36,14 @@ public class PrimeNumberChecker {
         }
         else {
             System.out.println();
-            System.out.println("--> " + number + " is not a prime number.");
+            System.out.println("--> " + number + " is not a prime number, i can be devided by more than just 1 and itself.");
             System.out.println();
         }
     }
 
 
     public static void printChoice(){
+        
         while(true){
             System.out.println();
             System.out.println();
@@ -55,6 +57,5 @@ public class PrimeNumberChecker {
                 break;
             }
         }
-
     }
 }

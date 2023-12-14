@@ -34,6 +34,7 @@ public class MultiplicationTable {
 
 
     public static void printChoice(){
+        
         while(true){
             System.out.println();
             System.out.println();
