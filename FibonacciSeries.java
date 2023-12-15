@@ -1,11 +1,11 @@
 import java.util.Scanner;
-public class PrimeNumberChecker {
+public class FibonacciSeries {
 
 
     public static void run(){
 
         int number = takeNumber();
-        printPrime(number);
+        printFibonacci(number);
         printChoice(); 
     }
 
@@ -14,9 +14,8 @@ public class PrimeNumberChecker {
         System.out.println();
         System.out.println();
         System.out.println();
-        System.out.print("Which number do you want to check? : ");
+        System.out.print("Please enter how long you want the Fibonacci series to be : ");
         int numberChecker = HelperMethods.getNumber();
-        System.out.println();
         while (numberChecker < 1) {
             System.out.print(" Your number was etheir to High or to Low so Pleas only put in a number between 1 and 10 : ");
             numberChecker = HelperMethods.getNumber();
@@ -25,26 +24,22 @@ public class PrimeNumberChecker {
     }
 
 
+    public static void printFibonacci(int number){
 
-    public static void printPrime(int number){
+        System.out.println();
+        int firstTerm = 0, secondTerm = 1; 
+        System.out.println("Fibonacci Series till " + number + " terms:");
+        System.out.println();
+        
+        for (int i = 1; i <= number; i++){
+            System.out.print(firstTerm + ", ");
 
-        boolean checker = false;
-        for (int i = 2; i <= number / 2; ++i) {
-            if ( number % i == 0) {
-                checker = true;
-                break;
-            }
+            int nextTerm = firstTerm + secondTerm;
+            firstTerm = secondTerm;
+            secondTerm = nextTerm;
         }
-        if (!checker){
-            System.out.println();
-            System.out.println("--> " + number + " is a prime number.");
-            System.out.println();
-        }
-        else {
-            System.out.println();
-            System.out.println("--> " + number + " is not a prime number, i can be devided by more than just 1 and itself.");
-            System.out.println();
-        }
+        System.out.println();
+        System.out.println();
     }
 
 
@@ -53,17 +48,15 @@ public class PrimeNumberChecker {
         while(true){
             System.out.println();
             System.out.println();
-            System.out.print("Do you want to check another number? Enter a new number or enter something else to stop the program : ");
+            System.out.print("Do you want to check another Series? Enter a new number or enter something else to stop the program : ");
             String choice = HelperMethods.getInput();
-            System.out.println();
             try {
                 int intValue = Integer.parseInt(choice);
                 while (intValue < 1) {
                     System.out.print(" Your number was etheir to High or to Low so Pleas only put in a number between 1 and 10");
                     intValue = HelperMethods.getNumber();
-                    System.out.println();
                 }
-                printPrime(intValue);
+                printFibonacci(intValue);
                 
             }
             catch (NumberFormatException e) {
