@@ -1,40 +1,40 @@
-import java.util.Scanner;
 public class FibonacciSeries {
 
-
     public static void run(){
-
         int number = takeNumber();
         printFibonacci(number);
-        printChoice(); 
+        runAgain(); 
     }
 
-
-    public static int takeNumber(){ 
+    private static int takeNumber(){ 
         System.out.println();
         System.out.println();
         System.out.println();
         System.out.print("Please enter how long you want the Fibonacci series to be : ");
         int numberChecker = HelperMethods.getNumber();
-        while (numberChecker < 1) {
-            System.out.print(" Your number was etheir to High or to Low so Pleas only put in a number between 1 and 10 : ");
+        while (numberChecker < 1 || numberChecker > 93) {
+            System.out.println();
+            System.out.print("Your number was either too low (below 0) or too high (above 93) : ");
             numberChecker = HelperMethods.getNumber();
         }
         return numberChecker;
     }
 
 
-    public static void printFibonacci(int number){
+    private static void printFibonacci(int number){
 
         System.out.println();
-        int firstTerm = 0, secondTerm = 1; 
-        System.out.println("Fibonacci Series till " + number + " terms:");
+        long firstTerm = 0, secondTerm = 1; 
+        System.out.println("Fibonacci Series till " + number + " terms: ");
         System.out.println();
         
         for (int i = 1; i <= number; i++){
-            System.out.print(firstTerm + ", ");
+            System.out.print(firstTerm);
+            if (i <= number - 1){
+                System.out.print(", ");
+            }
 
-            int nextTerm = firstTerm + secondTerm;
+            long nextTerm = firstTerm + secondTerm;
             firstTerm = secondTerm;
             secondTerm = nextTerm;
         }
@@ -43,17 +43,17 @@ public class FibonacciSeries {
     }
 
 
-    public static void printChoice(){
+    private static void runAgain(){
         
         while(true){
             System.out.println();
             System.out.println();
-            System.out.print("Do you want to check another Series? Enter a new number or enter something else to stop the program : ");
+            System.out.print("Ist dieser Satzt richtig geschrieben : ");
             String choice = HelperMethods.getInput();
             try {
                 int intValue = Integer.parseInt(choice);
                 while (intValue < 1) {
-                    System.out.print(" Your number was etheir to High or to Low so Pleas only put in a number between 1 and 10");
+                    System.out.print("Your number was to Low so Pleas only put in a number higher than 0 : ");
                     intValue = HelperMethods.getNumber();
                 }
                 printFibonacci(intValue);
