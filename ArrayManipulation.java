@@ -1,6 +1,14 @@
-import java.util.Scanner;
 public class ArrayManipulation {
 
+
+    public static void run(){
+        String word = getPalindrome();
+        isPalindrome(word);
+        printPalindrome(word);
+        printChoice();
+    }
+
+    
     public static void printChoice(){
         
         while(true){
