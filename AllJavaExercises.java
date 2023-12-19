@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class AllJavaExercices {
+public class AllJavaExercises {
 
     public static void main(String args[]) {
         boolean shouldLoop = true;

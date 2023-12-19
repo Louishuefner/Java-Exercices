@@ -7,14 +7,11 @@ public class FibonacciSeries {
     }
 
     private static int takeNumber(){ 
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.print("Please enter how long you want the Fibonacci series to be : ");
+        
+        System.out.print("\n\n\nPlease enter how long you want the Fibonacci series to be : ");
         int numberChecker = HelperMethods.getNumber();
         while (numberChecker < 1 || numberChecker > 93) {
-            System.out.println();
-            System.out.print("Your number was either too low (below 0) or too high (above 93) : ");
+            System.out.print("\nYour number was either too low (below 0) or too high (above 93) : ");
             numberChecker = HelperMethods.getNumber();
         }
         return numberChecker;
@@ -46,9 +43,8 @@ public class FibonacciSeries {
     private static void runAgain(){
         
         while(true){
-            System.out.println();
-            System.out.println();
-            System.out.print("Ist dieser Satzt richtig geschrieben : ");
+            
+            System.out.print("\n\nWould you like to see another Fibonacci Series? Enter a new number or enter something else to stop the program. : ");
             String choice = HelperMethods.getInput();
             try {
                 int intValue = Integer.parseInt(choice);

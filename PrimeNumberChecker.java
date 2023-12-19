@@ -37,7 +37,7 @@ public class PrimeNumberChecker {
             System.out.println();
         }
         else {
-            System.out.println("\n--> " + number + " is not a prime number, i can be devided by more than just 1 and itself.");
+            System.out.println("\n--> " + number + " is not a prime number, i can be divided by more than just 1 and itself.");
             System.out.println();
         }
     }
