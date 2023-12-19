@@ -1,13 +1,20 @@
+import java.util.Scanner;
+
 public class GuessNumberGame {
 
-    private final static int maxTryCount = 5;
-
-    public static void run(){
     
+    public static void run(Scanner seChoice){
         
+        int i = 0;
+        boolean restart = true ;
         System.out.println("\n\n\nA number is chosen between 1 to 10, Guess the number within 5 trials.\n\n");
-        startGuessingGame();
-        printChoice(); 
+        while(restart){
+            startGuessingGame();
+            if(i > 0){
+                restart = printChoice(seChoice);
+            }
+            i++;
+        }
     }
 
 
@@ -91,17 +98,18 @@ public class GuessNumberGame {
         return false;
     }
             
-    public static void printChoice(){
+    public static boolean printChoice(Scanner input){
         
         while(true){
-            System.out.print("\nWould you like to check another guess? Enter a new number or input something else to stop the program : ");
-            String choice = HelperMethods.getInput();
-            try {
-                int intValue = Integer.parseInt(choice);
-                startGuessingGame(intValue);
+
+            System.out.print("\n\nWould you like to see another multiplication table? (y|n)");
+            String choice = HelperMethods.getInput(input);
+            
+            if(choice == "y"){
+                return true;
             }
-            catch (NumberFormatException e) {
-                break;
+            else if(choice == "n"){
+                return false;
             }
         }
     }

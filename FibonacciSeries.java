@@ -1,20 +1,32 @@
+import java.util.Scanner;
+
 public class FibonacciSeries {
 
-    public static void run(){
-        int number = takeNumber();
-        printFibonacci(number);
-        runAgain(); 
+    public static void run(Scanner seChoice){
+        
+        int i = 0;
+        boolean restart = true ;
+ 
+        while(restart){
+            int number = takeNumber(seChoice);
+            printFibonacci(number);
+            if(i > 0){
+                restart = printChoice(seChoice);
+            }
+            i++;
+        }
     }
 
-    private static int takeNumber(){ 
+    private static int takeNumber(Scanner louis){ 
         
         System.out.print("\n\n\nPlease enter how long you want the Fibonacci series to be : ");
-        int numberChecker = HelperMethods.getNumber();
+        /*int numberChecker = HelperMethods.getNumber();
         while (numberChecker < 1 || numberChecker > 93) {
             System.out.print("\nYour number was either too low (below 0) or too high (above 93) : ");
             numberChecker = HelperMethods.getNumber();
         }
-        return numberChecker;
+        return numberChecker;*/
+        return HelperMethods.getNumber(louis);
     }
 
 
@@ -40,12 +52,25 @@ public class FibonacciSeries {
     }
 
 
-    private static void runAgain(){
+    public static boolean printChoice(Scanner input){
         
         while(true){
+
+            System.out.print("\n\nWould you like to see another multiplication table? (y|n)");
+            String choice = HelperMethods.getInput(input);
             
-            System.out.print("\n\nWould you like to see another Fibonacci Series? Enter a new number or enter something else to stop the program. : ");
-            String choice = HelperMethods.getInput();
+            if(choice == "y"){
+                return true;
+            }
+            else if(choice == "n"){
+                return false;
+            }
+        }
+    
+        
+        /*while(true){
+            
+            
             try {
                 int intValue = Integer.parseInt(choice);
                 while (intValue < 1) {
@@ -58,6 +83,6 @@ public class FibonacciSeries {
             catch (NumberFormatException e) {
                 break;
             }
-        }
+        } */
     }
 }

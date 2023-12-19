@@ -1,17 +1,27 @@
+import java.util.Scanner;
+
 public class PalindromeChecker {
     
 
-    public static void run(){
-        String word = getPalindrome();
-        isPalindrome(word);
-        printPalindrome(word);
-        printChoice();
+    public static void run(Scanner seChoice){
+        
+        int i = 0;
+        boolean restart = true ;
+ 
+        while(restart){
+            String word = getPalindrome(seChoice);
+            isPalindrome(word);// in dieser methode soll ich die printPalindrome aufrufen
+            if(i > 0){
+                restart = printChoice(seChoice);
+            }
+            i++;
+        }
     }
 
 
-    public static String getPalindrome(){
+    public static String getPalindrome(seChoice){
         System.out.print("Which word would you like to check? : ");
-        return HelperMethods.getInput();
+        return HelperMethods.get/*methode*/();
     }
 
 
@@ -42,13 +52,19 @@ public class PalindromeChecker {
     }
 
 
-    public static void printChoice(){
+    public static boolean printChoice(Scanner input){
         
         while(true){
 
-            System.out.print("\n\nWould you like to see another Palindrome Checker? Enter a new word or enter a number to stop the program : ");
-            String newWord = HelperMethods.getInput();
-            isPalindrome(newWord);
+            System.out.print("\n\nWould you like to see another multiplication table? (y|n)");
+            String choice = HelperMethods.getInput(input);
+            
+            if(choice == "y"){
+                return true;
+            }
+            else if(choice == "n"){
+                return false;
+            }
         }
     }
 }

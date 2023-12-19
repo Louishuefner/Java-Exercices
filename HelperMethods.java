@@ -2,9 +2,9 @@ import java.util.Scanner;
 public class HelperMethods{
 
 
-    public static int getNumber(){
+    public static int getNumber(Scanner scNumber){
         
-        try (Scanner scNumber = new Scanner(System.in)) {
+    
             int number;
                 
             while(!scNumber.hasNextInt()){
@@ -15,13 +15,12 @@ public class HelperMethods{
             number = scNumber.nextInt();
             
             return number;
-        }
+    
     }
 
-    public static String getInput(){
+    public static String getInput(Scanner seChoice){
 
-        try (Scanner seChoice = new Scanner(System.in)) {
-            return seChoice.next();
-        }
+        return seChoice.next();
+
     }
 }

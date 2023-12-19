@@ -33,28 +33,28 @@ public class AllJavaExercises {
             int choice = seChoice.nextInt();
             switch (choice) {
                 case 1:
-                    MultiplicationTable.run();
+                    MultiplicationTable.run(seChoice);
                     break;
                 case 2:
-                    PrimeNumberChecker.run();
+                    PrimeNumberChecker.run(seChoice);
                     break;
                 case 3:
-                    FibonacciSeries.run();
+                    FibonacciSeries.run(seChoice);
                     break;
                 case 4:
-                    GuessNumberGame.run();
+                    GuessNumberGame.run(seChoice);
                     break;
                 case 5:
-                    PalindromeChecker.run();
+                    PalindromeChecker.run(seChoice);
                     break;
                 case 6:
-                    StringReversal.run();
+                    StringReversal.run(seChoice);
                     break;
                 case 7:
-                    ArraySorting.run();
+                    ArraySorting.run(seChoice);
                     break;
                 case 8:
-                    ArrayManipulation.run();
+                    ArrayManipulation.run(seChoice);
                     break;
                 default:
                     break;

@@ -1,24 +1,34 @@
+import java.util.Scanner;
+
 public class PrimeNumberChecker {
 
 
-    public static void run(){
-
-        int number = takeNumber();
-        printPrime(number);
-        printChoice(); 
+    public static void run(Scanner seChoice){
+        
+        int i = 0;
+        boolean restart = true ;
+ 
+        while(restart){
+            int number = takeNumber(seChoice);
+            printPrime(number);
+            if(i > 0){
+                restart = printChoice(seChoice);
+            }
+            i++;
+        }
     }
 
 
-    public static int takeNumber(){ 
+    public static int takeNumber(Scanner louis){ 
 
         System.out.print("\n\n\nWhich number do you want to check? (under 1 Mio) : ");
-        int numberChecker = HelperMethods.getNumber();
+        /*int louis = HelperMethods.getNumber(louis);
         System.out.println();
-        while (numberChecker < 1) {
+        while (louis < 1) {
             System.out.print("Your number was to Low so Pleas only put in a number higher than 0 : ");
-            numberChecker = HelperMethods.getNumber();
-        }
-        return numberChecker;
+            louis = HelperMethods.getNumber(louis);
+        }*/
+        return HelperMethods.getNumber(louis);
     }
 
 
@@ -43,24 +53,18 @@ public class PrimeNumberChecker {
     }
 
 
-    public static void printChoice(){
+    public static boolean printChoice(Scanner input){
         
         while(true){
-            System.out.print("\n\nDo you want to check another number? Enter a new number or enter something else to stop the program : ");
-            String choice = HelperMethods.getInput();
-            System.out.println();
-            try {
-                int intValue = Integer.parseInt(choice);
-                while (intValue < 1) {
-                    System.out.print("Your number was to Low so Pleas only put in a number higher than 0 : ");
-                    intValue = HelperMethods.getNumber();
-                    System.out.println();
-                }
-                printPrime(intValue);
-                
+
+            System.out.print("\n\nWould you like to see another multiplication table? (y|n)");
+            String choice = HelperMethods.getInput(input);
+            
+            if(choice == "y"){
+                return true;
             }
-            catch (NumberFormatException e) {
-                break;
+            else if(choice == "n"){
+                return false;
             }
         }
     }
