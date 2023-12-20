@@ -5,60 +5,62 @@ public class GuessNumberGame {
     
     public static void run(Scanner seChoice){
         
-        int i = 0;
         boolean restart = true ;
         System.out.println("\n\n\nA number is chosen between 1 to 10, Guess the number within 5 trials.\n\n");
         while(restart){
-            startGuessingGame();
-            if(i > 0){
-                restart = printChoice(seChoice);
-            }
-            i++;
+            startGuessingGame(seChoice);
+            restart = HelperMethods.getRestart(seChoice, "Guess Number Game");
         }
     }
 
 
-    public static void startGuessingGame(int number){ 
+    public static void startGuessingGame(Scanner louis, int number){ 
         int guess = 1 + (int)(10* Math.random());
         System.out.println();
  
 
         int i = 0;
         
-        boolean guessedCorrectly = tryCheckGuess(guess, i, number);
+        boolean guessedCorrectly = tryCheckGuess(louis, guess, i, number);
         if(guessedCorrectly){
             return;
         }
         i++;
 
-        startTries(i, guess);
+        startTries(louis, i, guess);
 
     }
     
-    public static void startGuessingGame(){
+    public static void startGuessingGame(Scanner louis){
 
         int guess = 1 + (int)(10* Math.random());
         System.out.println();
- 
 
         int i = 0;
         
-        startTries(i, guess);
+        startTries(louis, i, guess);
 
     }
     
-    private static void startTries(int currentTryCount, int expected){
+    private static void startTries(Scanner louis, int currentTryCount, int expected){
+        
+        int K = 5;
+        int maxTryCount = K;
+
         for (int i = currentTryCount; i < maxTryCount; i++) {
             System.out.print("Guess the number: ");
-            int number = HelperMethods.getNumber();
-            boolean guessedCorrectly = tryCheckGuess(expected, i, number);
+            int number = HelperMethods.getNumber(louis);
+            boolean guessedCorrectly = tryCheckGuess(louis, expected, i, number);
             if(guessedCorrectly){
                 break;
             }
         }
     }
 
-    private static boolean tryCheckGuess(int expected, int currentTryCount, int guess){
+    private static boolean tryCheckGuess(Scanner louis, int expected, int currentTryCount, int guess){
+
+        int K = 5;
+        int maxTryCount = K;
 
         if (guess <= 10 && guess >= 1){
 
@@ -78,8 +80,8 @@ public class GuessNumberGame {
         }
         else{
             System.out.print("\nYour number was either too high or too low, so please only input a number between 1 and 10 : ");
-            int newValid = HelperMethods.getNumber();
-            tryCheckGuess(expected, currentTryCount,newValid);
+            int newValid = HelperMethods.getNumber(louis);
+            tryCheckGuess(louis, expected, currentTryCount,newValid);
             System.out.println();
         }
         return false;
@@ -96,21 +98,5 @@ public class GuessNumberGame {
             System.out.println("\nThe number is higher than " + input);
         }
         return false;
-    }
-            
-    public static boolean printChoice(Scanner input){
-        
-        while(true){
-
-            System.out.print("\n\nWould you like to see another multiplication table? (y|n)");
-            String choice = HelperMethods.getInput(input);
-            
-            if(choice == "y"){
-                return true;
-            }
-            else if(choice == "n"){
-                return false;
-            }
-        }
     }
 }

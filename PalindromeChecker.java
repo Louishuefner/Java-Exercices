@@ -5,23 +5,20 @@ public class PalindromeChecker {
 
     public static void run(Scanner seChoice){
         
-        int i = 0;
+        
         boolean restart = true ;
  
         while(restart){
             String word = getPalindrome(seChoice);
-            isPalindrome(word);// in dieser methode soll ich die printPalindrome aufrufen
-            if(i > 0){
-                restart = printChoice(seChoice);
-            }
-            i++;
+            printPalindrome(word);
+            restart = HelperMethods.getRestart(seChoice, "Palindrome Checker");
         }
     }
 
 
-    public static String getPalindrome(seChoice){
-        System.out.print("Which word would you like to check? : ");
-        return HelperMethods.get/*methode*/();
+    public static String getPalindrome(Scanner louis){
+        System.out.print("\n\nWhich word would you like to check? : ");
+        return HelperMethods.getWord(louis);
     }
 
 
@@ -45,26 +42,9 @@ public class PalindromeChecker {
         boolean isPalindrome = isPalindrome(word);
 
         if (isPalindrome) {
-            System.out.println(word + " This is a palindrome :)");
+            System.out.println("\n" + word + " is a palindrome :)");
         } else {
-            System.out.println(word + " This is not a palindrome :(");
-        }
-    }
-
-
-    public static boolean printChoice(Scanner input){
-        
-        while(true){
-
-            System.out.print("\n\nWould you like to see another multiplication table? (y|n)");
-            String choice = HelperMethods.getInput(input);
-            
-            if(choice == "y"){
-                return true;
-            }
-            else if(choice == "n"){
-                return false;
-            }
+            System.out.println("\n" + word + " is not a palindrome :(");
         }
     }
 }

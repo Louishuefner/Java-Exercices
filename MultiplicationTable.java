@@ -5,16 +5,12 @@ public class MultiplicationTable {
 
     public static void run(Scanner seChoice){
         
-        int i = 0;
         boolean restart = true ;
  
         while(restart){
             int number = takeNumber(seChoice);
             printTable(number);
-            if(i > 0){
-                restart = printChoice(seChoice);
-            }
-            i++;
+            restart = HelperMethods.getRestart(seChoice, "Multiplication Table");
         }
     }
 
@@ -39,22 +35,5 @@ public class MultiplicationTable {
         }
         System.out.println();
         System.out.println();
-    }
-
-
-    public static boolean printChoice(Scanner input){
-        
-        while(true){
-
-            System.out.print("\n\nWould you like to see another multiplication table? (y|n)");
-            String choice = HelperMethods.getInput(input);
-            
-            if(choice == "y"){
-                return true;
-            }
-            else if(choice == "n"){
-                return false;
-            }
-        }
     }
 }
