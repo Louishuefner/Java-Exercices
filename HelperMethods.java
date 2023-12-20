@@ -51,4 +51,10 @@ public class HelperMethods{
         }
         return restart;
     }
+    
+
+    public static String forNumbers(Scanner seChoice){
+
+        return seChoice.next();
+    }
 }

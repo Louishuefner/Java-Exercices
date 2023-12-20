@@ -8,9 +8,28 @@ public class StringReversal {
         boolean restart = true ;
  
         while(restart){
-            String word = get/*methode*/(seChoice);
-            /*methode*/(word);
+            String word = getReversal(seChoice);
+            printStringReversal(word);
             restart = HelperMethods.getRestart(seChoice, "String Reversal");
         }
+    }
+
+
+    public static String getReversal(Scanner getInput){
+        System.out.print("\n\nWhich String would you like to revers? : ");
+        return HelperMethods.getWord(getInput);
+    }
+
+
+    public static void printStringReversal(String word){
+        
+        String reverse = "";
+ 
+        for(int i = word.length() - 1; i >= 0; i--)
+        {
+        reverse = reverse + word.charAt(i);
+        }
+        
+        System.out.print("\nReversed string is : " + reverse + "\n");
     }
 }
