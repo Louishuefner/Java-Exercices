@@ -23,7 +23,8 @@ public class StringReversal {
 
     public static void printStringReversal(String word){
         
-        String reverse = "";
+        String reverse = " ";
+        /*String[]  = word.split(",");*/
  
         for(int i = word.length() - 1; i >= 0; i--)
         {

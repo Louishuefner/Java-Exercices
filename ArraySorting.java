@@ -10,7 +10,7 @@ public class ArraySorting {
             int number = amountOfElements(seChoice);
             int numberOfArrays = number;
             int[] intArray =takeNumbers(seChoice, numberOfArrays);
-            output(intArray, number);
+            output(intArray);
             restart = HelperMethods.getRestart(seChoice, "Array Sorting");
         }
     }
@@ -24,35 +24,33 @@ public class ArraySorting {
 
     
     public static int[] takeNumbers(Scanner arrays, int numberOfArrays){
-        int j, temp;
 
         System.out.print("Enter Elements : ");
         String numbers = HelperMethods.forNumbers(arrays);
-        String[] numberArray = numbers.split(" ");
+        String[] numberArray = numbers.split(",");
         int[] intArray = new int[numberArray.length];
         for(int i = 0;i < numberArray.length;i++){
-   
             intArray[i] = Integer.parseInt(numberArray[i]);
-            
-            for (i = 0; i < ( numberOfArrays - 1 ); i++) {
-                for (j = 0; j < numberOfArrays - i - 1; j++) {
-                  if (intArray[j] < intArray[j+1]) 
-                  {
-                    temp = intArray[j];
-                    intArray[j] = intArray[j+1];
-                    intArray[j+1] = temp;
-                  }
-                }
-              }
         }
+
+        
+            for(int i = 0; i < intArray.length - 1; i++){
+                while(intArray[i] > intArray[i + 1]){
+                    int temp = intArray[i];
+                    intArray[i] = intArray[i+1];
+                    intArray[i+1] = temp;
+                }
+                System.out.println("hitting for loop");
+            }
         return intArray;
     }
 
 
-    public static void output(int[] intArray, int number){
-        int i;
+    public static void output(int[] intArray){
+        
         System.out.print("Sorted Array : ");
-        for (i = 0; i < number; i++) 
-            System.out.print(intArray);
+        for (int i = 0; i < intArray.length; i++){
+            System.out.print(intArray[i] + ", ");
+        }      
     }
 }
