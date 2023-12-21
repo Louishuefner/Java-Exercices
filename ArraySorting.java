@@ -33,15 +33,21 @@ public class ArraySorting {
             intArray[i] = Integer.parseInt(numberArray[i]);
         }
 
-        
+        while(true){
             for(int i = 0; i < intArray.length - 1; i++){
                 while(intArray[i] > intArray[i + 1]){
                     int temp = intArray[i];
                     intArray[i] = intArray[i+1];
                     intArray[i+1] = temp;
                 }
-                System.out.println("hitting for loop");
+                if(intArray[i] < intArray[i + 1]) {
+                    break;
+                }
+             
             }
+            System.out.println("array is " + intArray);
+            
+        }
         return intArray;
     }
 
