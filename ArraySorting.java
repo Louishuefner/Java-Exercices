@@ -6,12 +6,11 @@ public class ArraySorting {
     public static void run(Scanner seChoice){
         
         boolean restart = true ;
-        int num, i, j, temp;
         while(restart){
             int number = amountOfElements(seChoice);
             int numberOfArrays = number;
-            int[] intArray =takeNumbers(seChoice, i, numberOfArrays, number, temp, j );
-            ausgabe(intArray, number, i);
+            int[] intArray =takeNumbers(seChoice, numberOfArrays);
+            output(intArray, number);
             restart = HelperMethods.getRestart(seChoice, "Array Sorting");
         }
     }
@@ -24,8 +23,9 @@ public class ArraySorting {
     }
 
     
-    public static int[] takeNumbers(Scanner arrays,int i,int numberOfArrays, int number, int temp, int j){
-        
+    public static int[] takeNumbers(Scanner arrays, int numberOfArrays){
+        int j, temp;
+
         System.out.print("Enter Elements : ");
         String numbers = HelperMethods.forNumbers(arrays);
         String[] numberArray = numbers.split(" ");
@@ -36,7 +36,7 @@ public class ArraySorting {
             
             for (i = 0; i < ( numberOfArrays - 1 ); i++) {
                 for (j = 0; j < numberOfArrays - i - 1; j++) {
-                  if (intArray[j] > intArray[j+1]) 
+                  if (intArray[j] < intArray[j+1]) 
                   {
                     temp = intArray[j];
                     intArray[j] = intArray[j+1];
@@ -49,8 +49,8 @@ public class ArraySorting {
     }
 
 
-    public static void ausgabe(int[] intArray, int number,int i){
-
+    public static void output(int[] intArray, int number){
+        int i;
         System.out.print("Sorted Array : ");
         for (i = 0; i < number; i++) 
             System.out.print(intArray);
