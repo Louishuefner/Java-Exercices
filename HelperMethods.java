@@ -26,7 +26,7 @@ public class HelperMethods{
             System.out.print("That is not a valid word. Please enter a valid word :");
             scWord.next();
         } 
-        word = scWord.nextLine();
+        word = scWord.next();
             
         return word;
     }

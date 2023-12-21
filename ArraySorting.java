@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArraySorting {
@@ -32,21 +33,15 @@ public class ArraySorting {
         for(int i = 0;i < numberArray.length;i++){
             intArray[i] = Integer.parseInt(numberArray[i]);
         }
-
-        while(true){
+        for(int l = 0; l < intArray.length; l++){
             for(int i = 0; i < intArray.length - 1; i++){
-                while(intArray[i] > intArray[i + 1]){
-                    int temp = intArray[i];
-                    intArray[i] = intArray[i+1];
-                    intArray[i+1] = temp;
-                }
-                if(intArray[i] < intArray[i + 1]) {
-                    break;
-                }
-             
+            while(intArray[i] > intArray[i + 1]){
+                int temp = intArray[i];
+                intArray[i] = intArray[i+1];
+                intArray[i+1] = temp;
+                System.out.println(Arrays.toString(intArray));
             }
-            System.out.println("array is " + intArray);
-            
+        }
         }
         return intArray;
     }
