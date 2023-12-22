@@ -30,7 +30,7 @@ public class ArraySorting {
         String numbers = HelperMethods.forNumbers(arrays);
         String[] numberArray = numbers.split(",");
         int[] intArray = new int[numberArray.length];
-        for(int i = 0;i < numberArray.length;i++){
+        for(int i = 0; i < numberArray.length; i++){
             intArray[i] = Integer.parseInt(numberArray[i]);
         }
         for(int l = 0; l < intArray.length; l++){
