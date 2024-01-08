@@ -7,7 +7,7 @@ public class HelperMethods{
         int number;
             
         while(!scNumber.hasNextInt()){
-            System.out.print("\nThat is not a valid number. Please enter a valid number :");
+            System.out.print("\nThat is not a valid number. Please enter a valid number : ");
             scNumber.next();
         } 
         number = scNumber.nextInt();
@@ -17,16 +17,15 @@ public class HelperMethods{
 
 
     public static String getWord(Scanner scWord){
-        
-        String wordInput;
             
         while(scWord.hasNextInt()){
-            System.out.print("\nThat is not a valid word. Please enter a valid word :");
+            System.out.print("\nThat is not a valid word. Please enter a valid word : ");
             scWord.next();
         }
-        wordInput = scWord.next();
-        
-        return wordInput;
+        scWord.nextLine();
+
+        String input = scWord.nextLine();
+        return input;
     }
     
 

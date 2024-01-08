@@ -24,7 +24,7 @@ public class AllJavaExercises {
         System.out.print(output);
         boolean isNumber = seChoice.hasNextInt();
         if(!isNumber){
-            String input = seChoice.nextLine();
+            String input = seChoice.next();
             if(input.equalsIgnoreCase("q")){
                 return false;
             }

@@ -26,7 +26,7 @@ public class ArraySorting {
     
     public static int[] takeNumbers(Scanner arrays, int numberOfArrays){
 
-        System.out.print("\nEnter Elements : ");
+        System.out.print("\nEnter Elements with a ',' in between: ");
         String numbers = HelperMethods.forNumbers(arrays);
         String[] numberArray = numbers.split(",");
         int[] intArray = new int[numberArray.length];
@@ -51,7 +51,7 @@ public class ArraySorting {
         
         System.out.print("Sorted Array : ");
         for (int i = 0; i < intArray.length; i++){
-            System.out.print(intArray[i] + ", ");
+            System.out.print(intArray[i - 1] + ", ");
         }      
     }
 }
