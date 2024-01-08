@@ -26,7 +26,7 @@ public class ArraySorting {
     
     public static int[] takeNumbers(Scanner arrays, int numberOfArrays){
 
-        System.out.print("Enter Elements : ");
+        System.out.print("\nEnter Elements : ");
         String numbers = HelperMethods.forNumbers(arrays);
         String[] numberArray = numbers.split(",");
         int[] intArray = new int[numberArray.length];

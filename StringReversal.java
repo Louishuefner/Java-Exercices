@@ -23,7 +23,7 @@ public class StringReversal {
 
     public static void printStringReversal(String word){
         
-        String reverse = " "; //reminder: du muss mit regex arbeiten
+        String reverse = ","; //reminder: du muss mit regex arbeiten
  
         for(int i = word.length() - 1; i >= 0; i--)
         {

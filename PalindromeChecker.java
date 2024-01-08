@@ -9,23 +9,23 @@ public class PalindromeChecker {
         boolean restart = true ;
  
         while(restart){
-            String word = getPalindrome(seChoice);
-            printPalindrome(word);
+            String wordInput = getPalindrome(seChoice);
+            printPalindrome(wordInput);
             restart = HelperMethods.getRestart(seChoice, "Palindrome Checker");
         }
     }
 
 
-    public static String getPalindrome(Scanner louis){
+    public static String getPalindrome(Scanner wordInput){
         System.out.print("\n\nWhich word would you like to check? : ");
-        return HelperMethods.getWord(louis);
+        return HelperMethods.getWord(wordInput);
     }
 
 
-    public static boolean isPalindrome(String word) {
-        word = word.replaceAll("[^a-zA-Z]", "").toLowerCase();
+    public static boolean isPalindrome(String wordInput) {
+        wordInput = wordInput.replaceAll("[^a-zA-Z]", "").toLowerCase();
 
-        char[] charArray = word.toCharArray();
+        char[] charArray = wordInput.toCharArray();
         int length = charArray.length;
 
         for (int i = 0; i < length / 2; i++) {
@@ -37,14 +37,15 @@ public class PalindromeChecker {
     }
 
 
-    public static void printPalindrome(String word) {
+    public static void printPalindrome(String wordInput) {
 
-        boolean isPalindrome = isPalindrome(word);
+        boolean isPalindrome = isPalindrome(wordInput);
 
         if (isPalindrome) {
-            System.out.println("\n" + word + " is a palindrome :)");
-        } else {
-            System.out.println("\n" + word + " is not a palindrome :(");
+            System.out.println("\n" + wordInput + " is a palindrome :)");
+        } 
+        else {
+            System.out.println("\n" + wordInput + " is not a palindrome :(");
         }
     }
 }
