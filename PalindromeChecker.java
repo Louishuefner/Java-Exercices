@@ -22,10 +22,10 @@ public class PalindromeChecker {
     }
 
 
-    public static boolean isPalindrome(String wordInput) {
-        wordInput = wordInput.replaceAll("[^a-zA-Z]", "").toLowerCase();
+    public static boolean isPalindrome(String word) {
+        word = word.replaceAll("[^a-zA-Z]", "").toLowerCase();
 
-        char[] charArray = wordInput.toCharArray();
+        char[] charArray = word.toCharArray();
         int length = charArray.length;
 
         for (int i = 0; i < length / 2; i++) {
@@ -42,10 +42,10 @@ public class PalindromeChecker {
         boolean isPalindrome = isPalindrome(wordInput);
 
         if (isPalindrome) {
-            System.out.println("\n" + wordInput + " is a palindrome :)");
+            System.out.println("\n" + wordInput + " is a palindrome :)\n");
         } 
         else {
-            System.out.println("\n" + wordInput + " is not a palindrome :(");
+            System.out.println("\n" + wordInput + " is not a palindrome :(\n");
         }
     }
 }

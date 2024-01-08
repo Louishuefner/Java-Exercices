@@ -18,16 +18,18 @@ public class HelperMethods{
 
     public static String getWord(Scanner scWord){
         
-        String word;
+        String wordInput;
             
         while(scWord.hasNextInt()){
             System.out.print("\nThat is not a valid word. Please enter a valid word :");
             scWord.next();
-        } 
-        word = scWord.nextLine();
-            
-        return word;
+        }
+        wordInput = scWord.next();
+        
+        return wordInput;
     }
+    
+
 
 
     public static String getInput(Scanner seChoice){
