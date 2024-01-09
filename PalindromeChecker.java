@@ -39,10 +39,10 @@ public class PalindromeChecker {
         boolean isPalindrome = isPalindrome(wordInput);
 
         if (isPalindrome) {
-            System.out.println("\n" + wordInput + " is a palindrome :)\n");
+            System.out.println("\n'" + wordInput + "' is a palindrome :)\n");
         } 
         else {
-            System.out.println("\n" + wordInput + " is not a palindrome :(\n");
+            System.out.println("\n'" + wordInput + "' is not a palindrome :(\n");
         }
     }
 }

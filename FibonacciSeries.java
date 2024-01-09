@@ -17,7 +17,8 @@ public class FibonacciSeries {
     private static void printFibonacci(Scanner inputScanner){
 
         int inputNumber = HelperMethods.takeGetNumber(inputScanner, "Fibonacci Series");
-        while(true){
+        boolean again = true;
+        while(again){
             if(inputNumber < 1 || inputNumber > 93) {
                 System.out.print("\nYour number was either too low (below 0) or too high (above 93) : ");
             }
@@ -37,6 +38,7 @@ public class FibonacciSeries {
                     secondTerm = nextTerm;
                 }
                 System.out.println("\n");
+                again = false;
             }
         }
     }

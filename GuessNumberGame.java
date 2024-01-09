@@ -66,8 +66,14 @@ public class GuessNumberGame {
                 System.out.println("\nYou have exhausted all of your " + maxTryCount + " trials.\n");
                 System.out.println("The number was " + guess);
             }
+            else if (currentTryCount < 1) {
+                System.out.println("\nYou have exhausted " + (currentTryCount + 1) + " trial.\n\n");
+            }
+            else if(currentTryCount == 4){
+                System.out.println("\nSorry, you have exhausted all trials :( Better luck next time.\n\n");
+            }
             else{
-                System.out.println("\nYou have exhausted " + (currentTryCount + 1) + " trial(s).\n\n");
+                System.out.println("\nYou have exhausted " + (currentTryCount + 1) + " trials.\n\n");
             }
         }
         else{

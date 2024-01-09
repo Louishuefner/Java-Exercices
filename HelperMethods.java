@@ -55,9 +55,8 @@ public class HelperMethods{
 
     public static int takeGetNumber (Scanner scNumber, String name){
         
-        System.out.print("\n\n\nWhich number would you like the " + name + " Table for? : ");
+        System.out.print("\n\n\nEnter a Number for the " + name + " : ");
         int number = getNumber(scNumber);
         return number;
     }
-    
 }

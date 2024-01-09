@@ -17,7 +17,8 @@ public class PrimeNumberChecker {
     public static void printPrime(Scanner inputScanner){
 
         int inputNumber = HelperMethods.takeGetNumber(inputScanner, "Prime Number Checker");
-        while(true){
+        boolean again = true;
+        while(again){
             if(inputNumber <= 0) {
                 System.out.print("\nYour number was to Low so Pleas only put in a number higher than 0 : ");
             }
@@ -31,11 +32,12 @@ public class PrimeNumberChecker {
                     }
                 }
                 if (!checker){
-                    System.out.println("\n--> " + checkedNumber + " is a prime number.\n");
+                    System.out.println("\n" + checkedNumber + " is a prime number.\n");
                 }
                 else {
-                    System.out.println("\n--> " + checkedNumber + " is not a prime number, i can be divided by more than just 1 and itself.\n");
+                    System.out.println("\n" + checkedNumber + " is not a prime number, i can be divided by more than just 1 and itself.\n");
                 }
+                again = false;
             }
         }   
     }

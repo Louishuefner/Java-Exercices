@@ -32,7 +32,7 @@ public class ArrayManipulation {
         System.out.println("\n\nSum of elements: " + sum);
 
         double average = (double) sum / intArray.length;
-        System.out.println("\nAverage of elements: " + average);
+        System.out.printf("\n\nAverage of elements: %.2f", average);
 
         int max = intArray[0];
         int min = intArray[0];
