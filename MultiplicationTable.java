@@ -8,32 +8,24 @@ public class MultiplicationTable {
         boolean restart = true ;
  
         while(restart){
-            int number = takeNumber(seChoice);
-            printTable(number);
+            printTable(seChoice);
             restart = HelperMethods.getRestart(seChoice, "Multiplication Table");
         }
     }
 
 
-    public static int takeNumber(Scanner louis){ 
+    public static void printTable(Scanner inputScanner){
         
-        System.out.print("\n\n\nWhich number would you like the multiplication Table for? : ");
-        return HelperMethods.getNumber(louis);
-    }
-
-
-    public static void printTable(int number){
-        
-        System.out.println("\nHere is your multiplication table for the number " + number );
+        int inputNumber = HelperMethods.takeGetNumber(inputScanner, "Multiplication Table");
+        System.out.println("\nHere is your multiplication table for the number " + inputNumber );
         for(int i = 1; i <= 10; i++) {
-            int answer = number * i;
+            int answer = inputNumber * i;
             
-            System.out.print(number + "x" + i + " = " +  answer);
+            System.out.print(inputNumber + "x" + i + " = " +  answer);
             if (i <= 9){
                 System.out.print(" | ");
             }
         }
-        System.out.println();
-        System.out.println();
+        System.out.println("\n");
     }
 }

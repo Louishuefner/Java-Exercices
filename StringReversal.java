@@ -6,10 +6,8 @@ public class StringReversal {
     public static void run(Scanner seChoice){
         
         boolean restart = true ;
- 
         while(restart){
-            String word = getReversal(seChoice);
-            printStringReversal(word);
+            printStringReversal(getReversal(seChoice));
             restart = HelperMethods.getRestart(seChoice, "String Reversal");
         }
     }
@@ -21,13 +19,13 @@ public class StringReversal {
     }
 
 
-    public static void printStringReversal(String word){
+    public static void printStringReversal(String wordReversal){
         
         String reverse = "";
  
-        for(int i = word.length() - 1; i >= 0; i--)
+        for(int i = wordReversal.length() - 1; i >= 0; i--)
         {
-        reverse = reverse + word.charAt(i);
+        reverse = reverse + wordReversal.charAt(i);
         }
         
         System.out.print("\nReversed string is : " + reverse + "\n");

@@ -4,7 +4,7 @@ public class AllJavaExercises {
     public static void main(String args[]) {
         boolean shouldLoop = true;
         Scanner seChoice = new Scanner(System.in);
-        while (shouldLoop){
+        while(shouldLoop){
             shouldLoop = renderMenu(seChoice);
         }   
     }    
@@ -22,8 +22,7 @@ public class AllJavaExercises {
                 + "\n\n[q]uit" 
                 + "\n\nINPUT: a number to select option or 'q' to exit the program : ";
         System.out.print(output);
-        boolean isNumber = seChoice.hasNextInt();
-        if(!isNumber){
+        if(!seChoice.hasNextInt()){
             String input = seChoice.next();
             if(input.equalsIgnoreCase("q")){
                 return false;

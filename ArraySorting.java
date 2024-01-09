@@ -8,9 +8,7 @@ public class ArraySorting {
         
         boolean restart = true ;
         while(restart){
-            int number = amountOfElements(seChoice);
-            int numberOfArrays = number;
-            int[] intArray =takeNumbers(seChoice, numberOfArrays);
+            int[] intArray = takeNumbers(seChoice,amountOfElements(seChoice));
             output(intArray);
             restart = HelperMethods.getRestart(seChoice, "Array Sorting");
         }

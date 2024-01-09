@@ -7,8 +7,8 @@ public class ArrayManipulation {
     public static void run(Scanner seChoice){
         
         boolean restart = true ;
- 
         while(restart){
+            
             takeNumbers(seChoice);
             restart = HelperMethods.getRestart(seChoice, "Array Manipulation");
         }
@@ -16,7 +16,6 @@ public class ArrayManipulation {
 
 
     public static int[] takeNumbers(Scanner arrays){
-
 
         System.out.print("\n\n\nEnter the elements of the array with ',' in between : ");
         String input = HelperMethods.forNumbers(arrays);
@@ -32,10 +31,8 @@ public class ArrayManipulation {
         }
         System.out.println("\n\nSum of elements: " + sum);
 
-
         double average = (double) sum / intArray.length;
         System.out.println("\nAverage of elements: " + average);
-
 
         int max = intArray[0];
         int min = intArray[0];

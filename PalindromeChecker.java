@@ -5,12 +5,9 @@ public class PalindromeChecker {
 
     public static void run(Scanner seChoice){
         
-        
         boolean restart = true ;
- 
         while(restart){
-            String wordInput = getPalindrome(seChoice);
-            printPalindrome(wordInput);
+            printPalindrome(getPalindrome(seChoice));
             restart = HelperMethods.getRestart(seChoice, "Palindrome Checker");
         }
     }
@@ -22,10 +19,10 @@ public class PalindromeChecker {
     }
 
 
-    public static boolean isPalindrome(String word) {
-        word = word.replaceAll("[^a-zA-Z]", "").toLowerCase();
+    public static boolean isPalindrome(String wordCheck) {
+        wordCheck = wordCheck.replaceAll("[^a-zA-Z]", "").toLowerCase();
 
-        char[] charArray = word.toCharArray();
+        char[] charArray = wordCheck.toCharArray();
         int length = charArray.length;
 
         for (int i = 0; i < length / 2; i++) {

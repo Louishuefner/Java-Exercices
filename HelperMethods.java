@@ -5,7 +5,6 @@ public class HelperMethods{
     public static int getNumber(Scanner scNumber){
         
         int number;
-            
         while(!scNumber.hasNextInt()){
             System.out.print("\nThat is not a valid number. Please enter a valid number : ");
             scNumber.next();
@@ -23,18 +22,15 @@ public class HelperMethods{
             scWord.next();
         }
         scWord.nextLine();
-
         String input = scWord.nextLine();
+        
         return input;
     }
     
 
-
-
     public static String getInput(Scanner seChoice){
         
         return seChoice.next();
-
     }
 
 
@@ -57,5 +53,11 @@ public class HelperMethods{
     }
     
 
+    public static int takeGetNumber (Scanner scNumber, String name){
+        
+        System.out.print("\n\n\nWhich number would you like the " + name + " Table for? : ");
+        int number = getNumber(scNumber);
+        return number;
+    }
     
 }
