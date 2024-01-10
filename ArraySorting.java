@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArraySorting {
@@ -8,23 +7,16 @@ public class ArraySorting {
         
         boolean restart = true ;
         while(restart){
-            int[] intArray = takeNumbers(seChoice,amountOfElements(seChoice));
+            int[] intArray = takeNumbers(seChoice);
             output(intArray);
             restart = HelperMethods.getRestart(seChoice, "Array Sorting");
         }
     }
 
-
-    public static int amountOfElements(Scanner numberOfArrays){ 
-        
-        System.out.print("\n\n\nEnter the amount of elements in the array : ");
-        return HelperMethods.getNumber(numberOfArrays);
-    }
-
     
-    public static int[] takeNumbers(Scanner arrays, int numberOfArrays){
+    public static int[] takeNumbers(Scanner arrays){
 
-        System.out.print("\nEnter Elements with a ',' in between: ");
+        System.out.print("\n\nEnter Elements with a ',' in between: ");
         String numbers = HelperMethods.forNumbers(arrays);
         String[] numberArray = numbers.split(",");
         int[] intArray = new int[numberArray.length];
@@ -37,7 +29,6 @@ public class ArraySorting {
                 int temp = intArray[i];
                 intArray[i] = intArray[i+1];
                 intArray[i+1] = temp;
-                System.out.println(Arrays.toString(intArray));
             }
         }
         }
@@ -47,9 +38,10 @@ public class ArraySorting {
 
     public static void output(int[] intArray){
         
-        System.out.print("Sorted Array : ");
-        for (int i = 0; i < intArray.length; i++){
-            System.out.print(intArray[i - 1] + ", ");
-        }      
+        System.out.print("\nSorted Array : ");
+        for (int i = 0; i < intArray.length - 1; i++){
+            System.out.print(intArray[i] + ", ");
+        }
+        System.out.print(intArray[intArray.length - 1] + "\n");     
     }
 }
