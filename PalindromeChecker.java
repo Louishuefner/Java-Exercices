@@ -3,23 +3,36 @@ import java.util.Scanner;
 public class PalindromeChecker {
     
 
-    public static void run(Scanner seChoice){
+    public static void run (Scanner seChoice){
         
         boolean restart = true ;
-        while(restart){
-            printPalindrome(getPalindrome(seChoice));
+        while (restart){
+            printPalindrome (getPalindrome(seChoice));
             restart = HelperMethods.getRestart(seChoice, "Palindrome Checker");
         }
     }
 
 
-    public static String getPalindrome(Scanner wordInput){
+    public static String getPalindrome (Scanner wordInput){
         System.out.print("\n\nWhich word would you like to check? : ");
         return HelperMethods.getWord(wordInput);
     }
 
 
-    public static boolean isPalindrome(String wordCheck) {
+    public static void printPalindrome (String wordInput) {
+
+        boolean isPalindrome = isPalindrome(wordInput);
+
+        if (isPalindrome) {
+            System.out.println("\n'" + wordInput + "' is a palindrome :)\n");
+        } 
+        else {
+            System.out.println("\n'" + wordInput + "' is not a palindrome :(\n");
+        }
+    }
+
+
+    public static boolean isPalindrome (String wordCheck) {
         wordCheck = wordCheck.replaceAll("[^a-zA-Z]", "").toLowerCase();
 
         char[] charArray = wordCheck.toCharArray();
@@ -31,18 +44,5 @@ public class PalindromeChecker {
             }
         }
         return true;
-    }
-
-
-    public static void printPalindrome(String wordInput) {
-
-        boolean isPalindrome = isPalindrome(wordInput);
-
-        if (isPalindrome) {
-            System.out.println("\n'" + wordInput + "' is a palindrome :)\n");
-        } 
-        else {
-            System.out.println("\n'" + wordInput + "' is not a palindrome :(\n");
-        }
     }
 }

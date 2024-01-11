@@ -2,14 +2,14 @@ import java.util.Scanner;
 public class AllJavaExercises {
 
     public static void main(String args[]) {
-        boolean shouldLoop = true;
-        Scanner seChoice = new Scanner(System.in);
-        while (shouldLoop) {
-            shouldLoop = renderMenu(seChoice);
+        boolean runRenderMenu = true;
+        Scanner scChoice = new Scanner(System.in);
+        while (runRenderMenu) {
+            runRenderMenu = renderMenu(scChoice);
         }
     }
 
-    private static boolean renderMenu(Scanner seChoice) {
+    private static boolean renderMenu(Scanner scChoice) {
         String output = "\n\n\nEnter the number to select an option:"
                 + "\n\n1.Multiplications Table"
                 + "\n\n2.PrimeNumber Checker"
@@ -23,11 +23,11 @@ public class AllJavaExercises {
                 + "\n\nINPUT: a number to select option or 'q' to exit the program : ";
         System.out.print(output);
 
-        String input = seChoice.next();
+        String input = scChoice.next();
         if (input.equalsIgnoreCase("q")) {
             return false;
         } 
-        else if (!input.equalsIgnoreCase("q") && !input.equalsIgnoreCase("Q") && !input.matches("[0-9]+")) {
+        else if (!input.matches("[1-8]+")) {
             System.out.println("\n'" + input + "' is not a valid input");
         } 
         else {
@@ -35,31 +35,31 @@ public class AllJavaExercises {
             if (choice < 1 || choice > 8) {
                 System.out.println("\n'" + choice + "' is not a valid input");
             } 
-            else {
+            else { 
                 switch (choice) {
                     case 1:
-                        MultiplicationTable.run(seChoice);
+                        MultiplicationTable.run(scChoice);
                         break;
                     case 2:
-                        PrimeNumberChecker.run(seChoice);
+                        PrimeNumberChecker.run(scChoice);
                         break;
                     case 3:
-                        FibonacciSeries.run(seChoice);
+                        FibonacciSeries.run(scChoice);
                         break;
                     case 4:
-                        GuessNumberGame.run(seChoice);
+                        GuessNumberGame.run(scChoice);
                         break;
                     case 5:
-                        PalindromeChecker.run(seChoice);
+                        PalindromeChecker.run(scChoice);
                         break;
                     case 6:
-                        StringReversal.run(seChoice);
+                        StringReversal.run(scChoice);
                         break;
                     case 7:
-                        ArraySorting.run(seChoice);
+                        ArraySorting.run(scChoice);
                         break;
                     case 8:
-                        ArrayManipulation.run(seChoice);
+                        ArrayManipulation.run(scChoice);
                         break;
                     default:
                         break;

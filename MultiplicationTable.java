@@ -16,16 +16,16 @@ public class MultiplicationTable {
 
     public static void printTable(Scanner inputScanner){
         
-        int inputNumber = HelperMethods.takeGetPositiveNumber(inputScanner, "Multiplication Table");
-        System.out.println("\nHere is your multiplication table for the number " + inputNumber );
+        int inputNumber = HelperMethods.receiveNumber(inputScanner, "Multiplication Table");
+        System.out.println("\nHere is your multiplication table for the number " + inputNumber);
         System.out.print(" ");
         for(int i = 1; i <= 10; i++) {
             int answer = inputNumber * i;
-            if(i == 6){
+            if(i == 6) {
                 System.out.print("\n");
             }
             System.out.print(inputNumber + "x" + i + " = " +  answer);
-            if (i <= 9 & i != 5){
+            if (i <= 9 & i != 5) {
                 System.out.print(" | ");
             }
         }

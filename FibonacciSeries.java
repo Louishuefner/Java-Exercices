@@ -16,20 +16,20 @@ public class FibonacciSeries {
 
     private static void printFibonacci(Scanner inputScanner){
 
-        int inputNumber = HelperMethods.takeGetNumber(inputScanner, "Fibonacci Series");
+        int inputNumber = HelperMethods.receiveNumber(inputScanner, "Fibonacci Series");
         boolean again = true;
-        while(again){
-            if(inputNumber < 1 || inputNumber > 93) {
+        while (again){
+            if (inputNumber < 1 || inputNumber > 93) {
                 System.out.print("\nYour number was either too low (below 0) or too high (above 93) : ");
             }
-            else{
+            else {
                 long firstTerm = 0, secondTerm = 1; 
                 System.out.println("\nFibonacci Series till " + inputNumber + " terms: \n");
                 
                 
-                for (int i = 1; i <= inputNumber; i++){
+                for (int i = 1; i <= inputNumber; i++) {
                     System.out.print(firstTerm);
-                    if (i <= inputNumber - 1){
+                    if (i <= inputNumber - 1) {
                         System.out.print(", ");
                     }
 

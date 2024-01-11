@@ -3,21 +3,21 @@ import java.util.Scanner;
 public class ArraySorting {
     
 
-    public static void run(Scanner seChoice){
+    public static void run (Scanner scChoice){
         
         boolean restart = true ;
-        while(restart){
-            int[] intArray = takeNumbers(seChoice);
+        while (restart){
+            int[] intArray = takeNumbers(scChoice);
             output(intArray);
-            restart = HelperMethods.getRestart(seChoice, "Array Sorting");
+            restart = HelperMethods.getRestart(scChoice, "Array Sorting");
         }
     }
 
     
-    public static int[] takeNumbers(Scanner arrays) {
+    public static int[] takeNumbers (Scanner scChoice) {
 
         System.out.print("\n\nEnter Elements with a ',' in between: ");
-        String numbers = HelperMethods.forNumbers(arrays);
+        String numbers = scChoice.next();
         String[] numberArray = numbers.split(",");
         int[] intArray = new int[numberArray.length];
         for (int i = 0; i < numberArray.length; i++) {
@@ -25,17 +25,16 @@ public class ArraySorting {
         }
 
         for (int l = 0; l < intArray.length; l++) {
-            boolean remeberSwap = false;
+            boolean rememberTheSwap = false;
             for (int i = 0; i < intArray.length - 1; i++) {
                 if (intArray[i] > intArray[i + 1]) {
                     int temp = intArray[i];
                     intArray[i] = intArray[i + 1];
                     intArray[i + 1] = temp;
-                    System.out.print(i);
-                    remeberSwap = true;
+                    rememberTheSwap = true;
                 }
             }
-            if(!remeberSwap){
+            if (!rememberTheSwap){
                 break;
             }
         }
