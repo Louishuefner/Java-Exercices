@@ -24,27 +24,22 @@ public class ArraySorting {
             intArray[i] = Integer.parseInt(numberArray[i]);
         }
 
-        if (!isSorted(intArray)) {
-            for (int l = 0; l < intArray.length; l++) {
-                for (int i = 0; i < intArray.length - 1; i++) {
-                    while (intArray[i] > intArray[i + 1]) {
-                        int temp = intArray[i];
-                        intArray[i] = intArray[i + 1];
-                        intArray[i + 1] = temp;
-                    }
+        for (int l = 0; l < intArray.length; l++) {
+            boolean remeberSwap = false;
+            for (int i = 0; i < intArray.length - 1; i++) {
+                if (intArray[i] > intArray[i + 1]) {
+                    int temp = intArray[i];
+                    intArray[i] = intArray[i + 1];
+                    intArray[i + 1] = temp;
+                    System.out.print(i);
+                    remeberSwap = true;
                 }
+            }
+            if(!remeberSwap){
+                break;
             }
         }
         return intArray;
-    }
-
-    public static boolean isSorted(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] > array[i + 1]) {
-                return false;
-            }
-        }
-        return true;
     }
 
     public static void output(int[] intArray) {
