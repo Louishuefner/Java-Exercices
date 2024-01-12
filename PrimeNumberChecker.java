@@ -36,7 +36,7 @@ public class PrimeNumberChecker {
                 boolean checker = false;
                 StringBuilder divisibleBy = new StringBuilder();
 
-                for (int i = 2; i <= inputNumber; ++i) {
+                for (int i = 2; i <= inputNumber / 2; ++i) {
                     if (checkedNumber % i == 0) {
                         checker = true;
                         divisibleBy.append(i).append(", ");
